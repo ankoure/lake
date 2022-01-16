@@ -6,13 +6,13 @@ from arcpy import env
 from arcpy.ia import *
 from arcpy.sa import *
 # Set environment settings
-env.workspace = "D:\\SalemState\\Python\\FinalProject\\Test.gdb"
+env.workspace = "./Test.gdb/"
 arcpy.env.overwriteOutput=True
 #need to pull lake stage as an external function i.e from a csv or rdb
-lakestage = 250
+lakestage = 247
 lakestagestr = str(lakestage)
-lakebathym = "D:\\SalemState\\Python\\FinalProject\\Test.gdb\\DL_Bathym"
-outputgdb = "D:\\SalemState\\Python\\FinalProject\\Test.gdb\\"
+lakebathym = "./Test.gdb/DL_Bathym/"
+outputgdb = "./Test.gdb/"
 GTEname = "GTE_" + lakestagestr 
 
 # Set local variables
@@ -25,7 +25,7 @@ inRaster2 = lakestage
 outGTE = GreaterThanEqual(inRaster1, inRaster2)
 
 # Save the output 
-outGTE.save(outputgdb + GTEname)
+#outGTE.save(outputgdb + GTEname)
 
 
 
